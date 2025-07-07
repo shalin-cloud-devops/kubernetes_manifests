@@ -1,0 +1,13 @@
+# This creates a httpd pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+spec:
+  containers:
+  - name: httpd
+    image: httpd:latest
+    ports:
+    - containerPort: 80
+
+

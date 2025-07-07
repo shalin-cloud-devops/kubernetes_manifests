@@ -1,0 +1,24 @@
+# This creates httpd pods with 3 replicas
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-deployment
+  labels:
+    app: default-httpd-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: default-httpd
+  template:
+    metadata:
+      labels:
+        app: default-httpd
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:latest
+        ports:
+        - containerPort: 80
+
